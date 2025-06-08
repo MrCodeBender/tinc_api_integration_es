@@ -1,0 +1,13 @@
+[
+  {
+    "name": "default",
+    "type": "mysql",
+    "host": "stage.ctjmekakfpzf.us-east-1.rds.amazonaws.com",
+    "port": 3306,
+    "username": "developer",
+    "password": "developer",
+    "database": "",
+    "synchronize": false,
+    "entities": ["entities/*.js"]
+  }
+]

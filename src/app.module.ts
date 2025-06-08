@@ -1,0 +1,32 @@
+import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { ConfigModule } from '@nestjs/config';
+import { AuthModule } from './auth/auth.module';
+import { IsAccountIntegrationAuth } from './entities/IsAccountIntegrationAuth';
+import * as Joi from 'joi';
+
+@Module({
+  imports: [
+    ConfigModule.forRoot({
+      validationSchema: Joi.object({
+        JWT_SECRET: Joi.string().required(),
+        JWT_EXPIRES_IN: Joi.string().default('1h'),
+      }),
+      isGlobal: true, // make env variables available globally 
+    }),
+    TypeOrmModule.forRoot({
+      type: 'mysql',
+      host: process.env.DB_HOST,
+      port: Number(process.env.DB_PORT),
+      username: process.env.DB_USER,
+      password: process.env.DB_PASS,
+      database: process.env.DB_NAME,
+      autoLoadEntities: true, // Automatic load of entities
+      synchronize: false, // ⚠️ Warning: keep disabled this option in production
+      logging: true, // Optional, useful for debugging
+    }),
+    TypeOrmModule.forFeature([IsAccountIntegrationAuth]),
+    AuthModule,
+  ],
+})
+export class AppModule { }

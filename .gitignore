@@ -1,0 +1,62 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Directorios de compilación de TypeScript
+dist/
+.out/
+.cache/
+
+# Configuración de IDEs y editores de texto
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos de entorno
+# .env
+.env.local
+.env.development
+.env.production
+.env.test
+.env.*.local
+
+# Bases de datos locales y backups
+*.sqlite
+*.sqlite3
+*.bak
+
+# Salidas de compilación y dependencias de Swagger
+swagger-stats.json
+swagger-ui-dist/
+
+# Caché de herramientas de desarrollo
+.nyc_output/
+coverage/
+.eslintcache
+.pnpm-debug.log
+turbo/
+
+# Archivos de Docker 
+docker-compose.override.yml
+docker-compose.dev.yml
+
+# Dependencias de la CLI de NestJS
+.nest-cli.json
+
+# Docker
+docker-compose.override.yml
+docker-compose.dev.yml
+
+# Mac OS
+.DS_Store
+
+# Cursor
+.cursorrules
