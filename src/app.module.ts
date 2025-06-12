@@ -4,6 +4,7 @@ import { ConfigModule } from '@nestjs/config';
 import { AuthModule } from './auth/auth.module';
 import { IsAccountIntegrationAuth } from './entities/IsAccountIntegrationAuth';
 import * as Joi from 'joi';
+import { AssetsModule } from './modules/assets/assets.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import * as Joi from 'joi';
     }),
     TypeOrmModule.forFeature([IsAccountIntegrationAuth]),
     AuthModule,
+    AssetsModule,
   ],
 })
 export class AppModule { }
