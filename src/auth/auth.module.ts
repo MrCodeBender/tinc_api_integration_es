@@ -4,14 +4,14 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { AuthController } from './auth.controller';
-import { IsAccountIntegrationAuth } from 'src/entities/IsAccountIntegrationAuth';
+import { EsAccountIntegrationAuth } from 'src/entities/EsAccountIntegrationAuth';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { ApiKeyStrategy } from './strategies/api-key.strategy';
 import { AuthView } from 'src/entities/AuthView';
 
 @Module({
     imports: [
-        TypeOrmModule.forFeature([IsAccountIntegrationAuth, AuthView]),
+        TypeOrmModule.forFeature([EsAccountIntegrationAuth, AuthView]),
         PassportModule,
         JwtModule.register({
             secret: process.env.JWT_SECRET,

@@ -4,7 +4,7 @@ import { AuthService } from '../../src/auth/auth.service';
 import { JwtService } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
 import { getRepositoryToken } from '@nestjs/typeorm';
-import { IsAccountIntegrationAuth } from '../../src/entities/IsAccountIntegrationAuth';
+import { IsAccountIntegrationAuth } from '../../src/entities/EsAccountIntegrationAuth';
 import { Repository } from 'typeorm';
 
 describe('AuthController', () => {

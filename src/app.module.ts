@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { AuthModule } from './auth/auth.module';
-import { IsAccountIntegrationAuth } from './entities/IsAccountIntegrationAuth';
+import { EsAccountIntegrationAuth } from './entities/EsAccountIntegrationAuth';
 import * as Joi from 'joi';
 import { AssetsModule } from './modules/assets/assets.module';
 
@@ -26,7 +26,7 @@ import { AssetsModule } from './modules/assets/assets.module';
       synchronize: false, // ⚠️ Warning: keep disabled this option in production
       logging: true, // Optional, useful for debugging
     }),
-    TypeOrmModule.forFeature([IsAccountIntegrationAuth]),
+    TypeOrmModule.forFeature([EsAccountIntegrationAuth]),
     AuthModule,
     AssetsModule,
   ],

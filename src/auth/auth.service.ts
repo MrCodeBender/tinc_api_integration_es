@@ -2,7 +2,7 @@ import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { IsAccountIntegrationAuth } from '../entities/IsAccountIntegrationAuth';
+import { EsAccountIntegrationAuth } from '../entities/EsAccountIntegrationAuth';
 import { AuthView } from '../entities/AuthView';
 import { ConfigService } from '@nestjs/config';
 import * as crypto from 'crypto';
@@ -13,8 +13,8 @@ export class AuthService {
         private jwtService: JwtService,
         @InjectRepository(AuthView)
         private authViewRepo: Repository<AuthView>,
-        @InjectRepository(IsAccountIntegrationAuth)
-        private apiKeyRepo: Repository<IsAccountIntegrationAuth>,
+        @InjectRepository(EsAccountIntegrationAuth)
+        private apiKeyRepo: Repository<EsAccountIntegrationAuth>,
         private readonly configService: ConfigService,
     ) { }
 
@@ -106,8 +106,7 @@ export class AuthService {
 
         return {
             id: user.id,
-            email: user.email,
-            is_account_main_id: user.is_account_main_id
+            is_account_main_id: user.es_account_main_id
         };
     }
 }
