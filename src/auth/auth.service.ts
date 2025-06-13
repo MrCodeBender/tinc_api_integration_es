@@ -106,7 +106,7 @@ export class AuthService {
 
         return {
             id: user.id,
-            is_account_main_id: user.es_account_main_id
+            es_account_main_id: user.es_account_main_id
         };
     }
 }
